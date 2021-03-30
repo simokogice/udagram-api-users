@@ -6,7 +6,7 @@ metadata:
     run: udagram-api-users
 spec:
   ports:
-  - port: 8080
+  - port: 8081
     protocol: TCP
   selector:
     run: udagram-api-users

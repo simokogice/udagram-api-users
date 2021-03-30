@@ -1,5 +1,5 @@
 # Use NodeJS base image
-FROM node:13
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 8081
 
 # Define the Docker image's behavior at runtime
-CMD ["node", "server.js"]
+CMD [ "npm", "run", "dev" ]

@@ -2,7 +2,7 @@
   "name": "udagram-api-users",
   "version": "1.0.0",
   "description": "microservice api for users",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node .",
     "tsc": "tsc",

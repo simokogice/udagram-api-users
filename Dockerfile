@@ -1,23 +1,13 @@
 # Use NodeJS base image
 FROM node:12.21.0
-
 # Create app directory
 WORKDIR /usr/src/app
-
-# Install app dependencies by copying
-# package.json and package-lock.json
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
 COPY package*.json ./
-
-# Copy app source
+RUN npm ci
+# Bundle app source
 COPY . .
-
-# Install dependencies
-RUN npm install
-
-RUN npm run build
-
-# Bind the port that the image will run on
 EXPOSE 8081
-
-# Define the Docker image's behavior at runtime
-CMD [ "node", "./www/server.js" ]
+CMD [ "npm", "run", "prod" ]

@@ -8,11 +8,11 @@ WORKDIR /usr/src/app
 # package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
-
 # Copy app source
 COPY . .
+
+# Install dependencies
+RUN npm install
 
 RUN npm run build
 
